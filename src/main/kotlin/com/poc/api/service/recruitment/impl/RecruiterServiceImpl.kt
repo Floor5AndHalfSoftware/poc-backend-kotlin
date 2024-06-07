@@ -1,5 +1,7 @@
 package com.poc.api.service.recruitment.impl
 
+import com.poc.api.controller.dto.request.RecruiterRequestJson
+import com.poc.api.controller.dto.response.RecruiterResponseJson
 import com.poc.api.persistance.entity.Recruiter
 import com.poc.api.persistance.repository.mybatis.RecruiterMapperRepository
 import com.poc.api.service.recruitment.RecruiterService
@@ -19,5 +21,11 @@ class RecruiterServiceImpl : RecruiterService {
         val recruiterList = recruiterMapperRepository.findAll()
         val recruiterMapped = recruiterList.map { recruiter: Recruiter -> RecruiterMapper.INSTANCE.recruiterToRecruiterResponseJson(recruiter) }
         return recruiterMapped
+    }
+
+    override fun create(recruiter: RecruiterRequestJson): RecruiterResponseJson {
+        val recruiterMapped = RecruiterMapper.INSTANCE.recruiterRequestJsonToRecruiter(recruiter)
+        recruiterMapperRepository.create(recruiterMapped)
+        return RecruiterMapper.INSTANCE.recruiterToRecruiterResponseJson(recruiterMapped)
     }
 }

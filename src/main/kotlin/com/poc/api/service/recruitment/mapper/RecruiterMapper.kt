@@ -1,12 +1,15 @@
 package com.poc.api.service.recruitment.mapper
 
+import com.poc.api.controller.dto.request.RecruiterRequestJson
 import com.poc.api.controller.dto.response.RecruiterResponseJson
 import com.poc.api.persistance.entity.Recruiter
 import org.mapstruct.Mapper
-import org.mapstruct.Mapping
 import org.mapstruct.factory.Mappers
 
-@Mapper
+@Mapper(
+    componentModel = "spring",
+    uses = [RecruiterRequestJson::class, RecruiterResponseJson::class, Recruiter::class]
+)
 interface RecruiterMapper {
 
     companion object {
@@ -14,5 +17,6 @@ interface RecruiterMapper {
     }
 
     fun recruiterToRecruiterResponseJson(recruiter: Recruiter): RecruiterResponseJson
+    fun recruiterRequestJsonToRecruiter(recruiter: RecruiterRequestJson): Recruiter
 
 }

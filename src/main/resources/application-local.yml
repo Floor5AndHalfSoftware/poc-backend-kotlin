@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOST_LOCAL}:${DB_PORT_LOCAL}/${DB_NAME_LOCAL}
-    username: ${DB_USER_LOCAL}
-    password: ${DB_PASSWORD_LOCAL}
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -11,3 +11,6 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  flyway:
+    enabled: true
+    locations: classpath:/migrations

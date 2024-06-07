@@ -1,5 +1,6 @@
 package com.poc.api.controller
 
+import com.poc.api.controller.dto.request.RecruiterRequestJson
 import com.poc.api.controller.dto.response.RecruiterResponseJson
 import com.poc.api.service.recruitment.RecruiterService
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,5 +22,12 @@ class RecruiterController {
     fun retrieveAll(): ResponseEntity<List<RecruiterResponseJson>> {
         val dtoList: List<RecruiterResponseJson> = recruiterService.findAll()
         return ResponseEntity.ok().body(dtoList)
+    }
+
+    @PostMapping("/recruitments")
+    @ResponseStatus(HttpStatus.CREATED)
+    fun create(@RequestBody recruiter: RecruiterRequestJson): ResponseEntity<RecruiterResponseJson> {
+        val dto: RecruiterResponseJson = recruiterService.create(recruiter)
+        return ResponseEntity.ok().body(dto)
     }
 }
