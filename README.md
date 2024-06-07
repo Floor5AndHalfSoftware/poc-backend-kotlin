@@ -1,3 +1,7 @@
+# PoC API REST con Spring Boot y Kotlin
+
+Swagger (Local) -> http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+
 ## Variables de entorno para pruebas
 
 Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
