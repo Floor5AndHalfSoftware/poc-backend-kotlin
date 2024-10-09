@@ -4,7 +4,6 @@ spring:
     url: ${DB_URL}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
-    initialization-mode: always
   jpa:
     hibernate:
       ddl-auto: none
@@ -19,3 +18,6 @@ spring:
   flyway:
     enabled: true
     locations: classpath:/migrations
+  sql:
+    init:
+      mode: always

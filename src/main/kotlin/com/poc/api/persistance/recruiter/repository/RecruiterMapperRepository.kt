@@ -1,6 +1,6 @@
-package com.poc.api.persistance.repository.mybatis
+package com.poc.api.persistance.recruiter.repository
 
-import com.poc.api.persistance.entity.Recruiter
+import com.poc.api.persistance.recruiter.entity.Recruiter
 import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Options

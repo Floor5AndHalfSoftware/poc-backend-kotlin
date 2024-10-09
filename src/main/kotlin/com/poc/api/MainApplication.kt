@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @SpringBootApplication
 @EnableTransactionManagement
 @MapperScan(
-        "com.poc.api.persistance.repository.mybatis"
+    basePackages = ["com.poc.api.persistance"],
+    annotationClass = org.apache.ibatis.annotations.Mapper::class
 )
 class MainApplication
 

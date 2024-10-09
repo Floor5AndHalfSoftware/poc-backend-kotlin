@@ -1,4 +1,4 @@
-package com.poc.api.persistance.entity
+package com.poc.api.persistance.project
 
 import java.sql.Date
 import java.sql.Timestamp

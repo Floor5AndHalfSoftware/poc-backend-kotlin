@@ -1,4 +1,4 @@
-package com.poc.api.persistance.entity
+package com.poc.api.persistance.candidate.entity
 
 import java.sql.Timestamp
 
@@ -16,6 +16,6 @@ data class Candidate(
         var university: String = "",
         var academicDegree: String = "",
         var workExperience: String = "",
-        var skills: Array<String>? = null,
+        var skills: String = "",
         var creationDate: Timestamp? = null
 )
